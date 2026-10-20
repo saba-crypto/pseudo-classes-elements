@@ -1,0 +1,71 @@
+@charset "UTF-8";
+::selection {
+  background-color: red;
+}
+
+.nav-list {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 10px;
+  background-color: black;
+}
+.nav-list .list-item-card {
+  background-color: gray;
+  border-radius: 3px;
+  padding: 5px;
+}
+.nav-list .list-item-card a {
+  color: white;
+  text-decoration: none;
+}
+.nav-list .list-item-card:nth-child(odd):not(.featured) {
+  background-color: white;
+}
+.nav-list .list-item-card:nth-child(odd):not(.featured) a {
+  color: black;
+}
+.nav-list .list-item-card:last-child:not(:first-child) {
+  border: 6px solid darkred;
+}
+.nav-list:has(.list-item-card:hover) .list-item-card:not(:hover)::before {
+  content: "★ ";
+}
+.nav-list .list-item-card:first-child::first-letter {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: violet;
+}
+.form:not(:has(input[type=checkbox]:checked)) .submit-btn {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.form .submit-btn:not(:disabled):hover::after {
+  content: "?";
+}
+.form .form-section {
+  display: flex;
+  flex-direction: column;
+}
+.form .form-section:has(.email-input:invalid:not(:placeholder-shown))::after {
+  content: "Please Enter valid email";
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/*# sourceMappingURL=styles.css.map */
